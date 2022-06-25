@@ -13,7 +13,7 @@
     <title>登录</title>
   </head>
   <body>
-  <form method="post" action="<%=application.getContextPath()%>/hotel">
+  <form method="post" action="<%=application.getContextPath()%>/hotelObj">
     <h4>用户名:</h4>
     <br>
     <input type="text" name="username">

@@ -19,17 +19,27 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+<!--编译时jdk版本要求1.8以上-->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <!--运行时jdk版本要求1.8以上-->
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
+<!--    测试工具包-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.5.10</version>
+    </dependency>
+
 
 
     <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
@@ -56,8 +66,31 @@
   </dependencies>
 
   <build>
-    <finalName>hotel</finalName>
+    <resources>
+      <resource>
+<!--        配置文件-->
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+    </resources>
+
+<!--    打包名称:*.war&ndash;&gt;
+    <finalName>hotel</finalName>-->
+
+
+
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+<!--        maven生命周期插件-->
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -90,5 +123,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+  <!--  <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>-->
   </build>
 </project>
