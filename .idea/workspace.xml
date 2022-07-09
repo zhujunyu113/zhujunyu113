@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecf370bc-34bf-4fba-8c03-74fddabd2d10" name="变更" comment="v1.1">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e59414f4-0ece-466b-bfdd-15358fa4d422.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e59414f4-0ece-466b-bfdd-15358fa4d422.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "last_opened_file_path": "C:/Users/29170/IdeaProjects/zhujunyu113/src/main/java/zjy/web/Filterselect",
-    "project.structure.last.edited": "模块",
+    "project.structure.last.edited": "工件",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "vcs.Git",
@@ -320,7 +320,7 @@
       <workItem from="1657346830723" duration="541000" />
       <workItem from="1657347384339" duration="320000" />
       <workItem from="1657353081112" duration="376000" />
-      <workItem from="1657353469150" duration="564000" />
+      <workItem from="1657353469150" duration="1073000" />
     </task>
     <task id="LOCAL-00001" summary="hotel">
       <created>1655279103505</created>
@@ -350,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657353528272</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="v1.1">
+      <created>1657354092180</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657354092180</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +374,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Topic" />
+                        <option value="origin/Main" />
                       </list>
                     </value>
                   </entry>
