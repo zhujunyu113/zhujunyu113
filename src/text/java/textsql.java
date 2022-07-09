@@ -9,6 +9,7 @@ import zjy.web.bin.hotelObj;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.*;
 import java.util.List;
 
 public class textsql {
@@ -34,10 +35,54 @@ public class textsql {
 
 
     }
-    @Test
-    public void textobj(){
-     int s=111;
-        System.out.println(s);
+    //生成记录条数
 
+    public void textobj(){
+        Connection conn=null;
+        PreparedStatement st=null;
+        //ResultSet rs=null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn= DriverManager.getConnection("jdbc:mysql://192.168.0.78:3306/zjy","zjy","zjy");
+            st=conn.prepareStatement("insert into hotel ( roomno, hotel_status, room_type) VALUES (?,?,?);");
+            for(int x=1;x<=10;x++){
+                for(int y=1;y<=10;y++){
+                    String s=null;
+                    if(y<=5){
+                        s="大床房";
+
+                    }else s="双人房";
+                    int i=(x*100)+y;
+                    st.setInt(1,i);
+                    st.setString(2,"False");
+                    st.setString(3,s);
+                    st.executeUpdate();
+
+
+                }
+
+            }
+
+
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+        }
     }
 }

@@ -5,16 +5,25 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import zjy.web.Mappers.userMapper;
+import zjy.web.bin.User;
+
 
 import java.io.IOException;
-import java.sql.*;
+import java.io.InputStream;
+
+import java.util.List;
 
 
 public class loginfilter implements Filter {
-    public boolean cookielogin(HttpServletRequest req, HttpServletResponse resp,FilterChain filterChain) throws ServletException, IOException {
+    public boolean cookielogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //如果没有登录,就验证cookie登录
         Cookie[] cookie=req.getCookies();
-        ServletContext servletContext = req.getServletContext();
         //准备用户名和密码
         String name=null,passwor=null;
         Cookie cookie0=null,cookie2=null;
@@ -37,7 +46,7 @@ public class loginfilter implements Filter {
             req.getRequestDispatcher("/index.jsp").forward(req,resp);
             return false;
 
-        }else if(login(name,passwor,servletContext)){
+        }else if(login(name,passwor)){
             HttpSession session = req.getSession();
             session.setAttribute("username",name);
             cookie0.setMaxAge(60*60*24*2);//自动续2天的有效期
@@ -45,7 +54,7 @@ public class loginfilter implements Filter {
             resp.addCookie(cookie0);
             resp.addCookie(cookie2);
             //跳转到资源
-            resp.sendRedirect(req.getContextPath()+"/hotel");
+            resp.sendRedirect(req.getContextPath()+"/hotelup");
             return true;
 
 
@@ -75,11 +84,11 @@ public class loginfilter implements Filter {
         if("/index.jsp".equals(req.getServletPath())){
           //如果是登录页，且没有登录,就登录，登录了就跳转
             if(username==null){
-                if(!cookielogin(req,resp,filterChain)) {
+                if(!cookielogin(req,resp)) {
                     //如果当前没有登陆，尝试使用cookie登录，如果登录失败就跳转到登录
                     filterChain.doFilter(servletRequest, servletResponse);
                 }
-            }else resp.sendRedirect("/hotel");
+            }else resp.sendRedirect("hotelup");
 
           return;
       }else if(username != null) {
@@ -94,10 +103,9 @@ public class loginfilter implements Filter {
 
 
         //程序走到这里说明需要登录
-        ServletContext servletContext = req.getServletContext();
         String username1 = req.getParameter("username");
         String password = req.getParameter("password");
-        if(username1!=null&&password!=null&&login(username1, password,servletContext)){
+        if(username1!=null&&password!=null&&login(username1, password)){
             //登录成功,向会话域中添加数据,跳转至资源
             session.setAttribute("username",username1);
             //Cookie[] cookie=req.getCookies();
@@ -146,57 +154,24 @@ public class loginfilter implements Filter {
 
 
     }
-    public boolean login(String username,String password,ServletContext servletContext){
-        Connection conn=null;
-        //连接
-        PreparedStatement ps=null;
-        //数据库连接对象
-        ResultSet rs=null;
-        //结果集
+    public boolean login(String username,String password) throws IOException {
+//使用文件流读取mybatis核心配置文件
+        InputStream sql= Resources.getResourceAsStream("SqlMapConfig.xml");
+        //创建SQlsessionFActory工厂
+        SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(sql);
+        //获取SQLsession对象
+        SqlSession sqlSession=factory.openSession();
 
-        //用户是否登录成功
-        try {
-            //注册驱动
-            String driver = servletContext.getInitParameter("Driver");
-            Class.forName(driver);
-            //获取连接
-            String url=servletContext.getInitParameter("url");
-            String user=servletContext.getInitParameter("user");
-            String password1=servletContext.getInitParameter("password");
-            conn= DriverManager.getConnection(url,user,password1);
-            //获取数据库操作对象
-            ps= conn.prepareStatement("select * from user where name =? and password =? ;");
-            //执行sql语句
-            ps.setString(1,username);
-            ps.setString(2,password);
-            rs=ps.executeQuery();
-            //处理结果集
-            while (rs.next()){
-                return true;
-                //如果有结果集代表登录成功,返回true
-            }
-            //如果没有结果集代表登录失败,返回false
-            return false;
-
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }finally {
-            //释放资源
-            try{
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
-
-            }catch (SQLException e){
-                throw  new RuntimeException(e);
-            }
-        }
+        //完成查询操作
+        //动态代理解析hotelMapper.xml文件,返回hotelMapper接口(动态代理对象),通过接口方法获取
+        userMapper mapper = sqlSession.getMapper(userMapper.class);
+        //查询结果返回对象集合
+        List<User> user = mapper.getUser(new User(username,password));
+        //关闭
+        sqlSession.close();
+        //如果为空就没有
+        //如果不为空则登录成功
+        return !user.isEmpty();
 
     }
 
