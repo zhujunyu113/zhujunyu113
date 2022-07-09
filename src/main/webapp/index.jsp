@@ -13,6 +13,9 @@
     <title>登录</title>
   </head>
   <body>
+
+
+
   <form method="post" action="<%=application.getContextPath()%>/hotelup">
     <h4>用户名:</h4>
     <br>
