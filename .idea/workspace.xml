@@ -9,40 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecf370bc-34bf-4fba-8c03-74fddabd2d10" name="变更" comment="v1.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/zjy/web/Filterselect/exit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/zjy/web/Filterselect/getip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/zjy/web/Mappers/hotelMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/zjy/web/Mappers/hotelMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/zjy/web/bin/hotelObj.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/zjy/web/Filterselect/hotelup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/zjy/web/Filterselect/hotelup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/zjy/web/Filterselect/exit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/zjy/web/Filterselect/getip.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/zjy/web/Filterselect/hotel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/zjy/web/Filterselect/hotelup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/zjy/web/Filterselect/hotelup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/zjy/web/bin/hotelObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/zjy/web/bin/hotelObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/zjy/web/Filterselect/exit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/zjy/web/Filterselect/getip.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/zjy/web/Filterselect/hotel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/zjy/web/Filterselect/hotelup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/zjy/web/Filterselect/hotelup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/zjy/web/bin/hotelObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/hotel-1.1/WEB-INF/classes/zjy/web/bin/hotelObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/html/httpse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/html/shibai.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/html/吃球球.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/html/吃豆豆1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/html/成绩单.HTML" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/hotel-1.1/html/渐变色.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Textjavav.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dongtaidaili.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/textjava.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/textjavaTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="ecf370bc-34bf-4fba-8c03-74fddabd2d10" name="变更" comment="v1.1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,12 +72,12 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "last_opened_file_path": "C:/Users/29170/IdeaProjects/untitled4",
+    "last_opened_file_path": "C:/Users/29170/IdeaProjects/zhujunyu113/src/main/java/zjy/web/Filterselect",
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "vcs.Git",
-    "spring.configuration.checksum": "bbeb841dd266b9c0698ef1cd7a6e7e89"
+    "spring.configuration.checksum": "e919c49d5f0cd737285367810a3394d0"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -120,6 +87,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\29170\IdeaProjects\zhujunyu113\src\main\java\zjy\web\Filterselect" />
       <recent name="C:\Users\29170\IdeaProjects\untitled4\src\main\resources" />
       <recent name="C:\Users\29170\IdeaProjects\untitled4\src\main\webapp\html" />
       <recent name="C:\Users\29170\IdeaProjects\untitled4\src\main\webapp" />
@@ -186,6 +154,19 @@
       <option name="MAIN_CLASS_NAME" value="textuser" />
       <option name="METHOD_NAME" value="textUser" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="hotel" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="hotel" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -336,6 +317,7 @@
       <workItem from="1657206922365" duration="320000" />
       <workItem from="1657346830723" duration="541000" />
       <workItem from="1657347384339" duration="320000" />
+      <workItem from="1657353081112" duration="376000" />
     </task>
     <task id="LOCAL-00001" summary="hotel">
       <created>1655279103505</created>
